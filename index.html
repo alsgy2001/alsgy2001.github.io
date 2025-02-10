@@ -8,177 +8,61 @@
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap");
-
-      * {
-        box-sizing: border-box;
-        padding: 0;
-        margin: 0;
-      }
-
-      body {
-        font-family: "Quicksand", sans-serif;
-        color: #324e63;
-        background-image: linear-gradient(-20deg, #8fb9db 0%, rgb(4, 37, 87));
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-      }
-
-      .card {
-        width: 350px;
-        background: #fff;
-        border-radius: 12px;
-        box-shadow: 0 8px 60px -10px rgba(13, 28, 39, 0.6);
-        text-align: center;
-        padding: 20px;
-        animation: fadeIn 1s ease-in-out;
-      }
-
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(-20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
+    <link rel="stylesheet" href="./assets/css/index.css" />
+    <script>
+      function toggleSocial() {
+        var socialSection = document.getElementById("social-section");
+        if (socialSection.style.display === "none" || socialSection.style.display === "") {
+          socialSection.style.display = "flex";
+        } else {
+          socialSection.style.display = "none";
         }
       }
-
-      .card-img img {
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        box-shadow: 0 5px 50px 0 #448efc;
-        transition: transform 0.3s;
-      }
-
-      .card-img img:hover {
-        transform: scale(1.1);
-      }
-
-      .social {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 15px;
-        margin-top: 15px;
-      }
-
-      .social-item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 65px;
-        height: 65px;
-        margin: 10px;
-        border-radius: 50%;
-        color: #fff;
-        font-size: 21px;
-        transition: transform 0.3s;
-        position: relative;
-      }
-
-      .social-item:hover {
-        transform: scale(1.2);
-      }
-
-      .social-item::after {
-        content: attr(data-label);
-        position: absolute;
-        bottom: -30px;
-        background: rgba(0, 0, 0, 0.7);
-        color: white;
-        padding: 5px 10px;
-        border-radius: 5px;
-        font-size: 12px;
-        opacity: 0;
-        transition: opacity 0.3s;
-      }
-
-      .social-item:hover::after {
-        opacity: 1;
-      }
-
-      .twitter { background: #00070c; }
-      .discord { background: #7289da; }
-      .instagram { background: #e1306c; }
-      .linkedin { background: #0077b5; }
-      .email { background: #d44638; }
-      .github { background: #333; }
-
-      .card-btn {
-        display: inline-block;
-        margin-top: 20px;
-        padding: 10px 20px;
-        border-radius: 50px;
-        background: #136dd5;
-        color: white;
-        text-decoration: none;
-        font-weight: bold;
-        transition: background 0.3s, transform 0.2s;
-      }
-
-      .card-btn:hover {
-        background: #5693da;
-        transform: translateY(-3px);
-      }
-    </style>
+    </script>
   </head>
   <body>
     <div class="card">
       <div class="card-img">
-        <img src="https://avatars.githubusercontent.com/u/195439767?v=4"
-          alt="Foto de Alan Guerra" />
+        <img src="https://avatars.githubusercontent.com/u/195439767?v=4" alt="Foto de Alan Guerra" />
       </div>
       <h2>Alan L. S. Guerra</h2>
       <h3>Engenheiro de Software</h3>
       <p>Goiânia, GO - Brasil</p>
       <p>Acesse o meu <a href="https://www.esalanguerra.com.br">Site</a> </p>
-      <div class="social">
-        <a href="https://x.com/alsgy2001" class="social-item twitter"
-          data-label="X">
+      <button onclick="toggleSocial()" class="expand-btn">Expandir Redes Sociais</button>
+      <div id="social-section" class="social" style="display: none;">
+        <a href="https://x.com/alsgy2001" class="social-item twitter" data-label="X">
           <i class="fab fa-x"></i>
         </a>
-        <a href="https://discord.com/users/1298443986343694480"
-          class="social-item discord" data-label="Discord">
+        <a href="https://discord.com/users/1298443986343694480" class="social-item discord" data-label="Discord">
           <i class="fab fa-discord"></i>
         </a>
-        <a href="https://instagram.com/alsgy2001" class="social-item instagram"
-          data-label="Instagram Pessoal">
+        <a href="https://instagram.com/alan_guerra_y" class="social-item instagram" data-label="Instagram Pessoal">
           <i class="fab fa-instagram"></i>
         </a>
-        <a href="https://instagram.com/esalanguerra" class="social-item instagram"
-          data-label="Instagram Profissional">
+        <a href="https://instagram.com/esalanguerra" class="social-item instagram" data-label="Instagram Profissional">
           <i class="fab fa-instagram"></i>
         </a>
-        <a href="https://linkedin.com/in/alsgy2001" class="social-item linkedin"
-          data-label="LinkedIn PF">
+        <a href="https://linkedin.com/in/alsgy2001" class="social-item linkedin" data-label="LinkedIn PF">
           <i class="fab fa-linkedin"></i>
         </a>
-        <a href="https://linkedin.com/in/esalanguerra"
-          class="social-item linkedin" data-label="LinkedIn PJ">
+        <a href="https://linkedin.com/in/esalanguerra" class="social-item linkedin" data-label="LinkedIn PJ">
           <i class="fab fa-linkedin"></i>
         </a>
-        <a href="mailto:contato@esalanguerra.com.br" class="social-item email"
-          data-label="Email Profissional">
+        <a href="https://gitlab.com/alsgy2001" class="social-item gitlab" data-label="GitLab">
+          <i class="fab fa-gitlab"></i>
+        </a>
+        <a href="mailto:contato@esalanguerra.com.br" class="social-item email" data-label="Email Profissional">
           <i class="fas fa-envelope"></i>
         </a>
-        <a href="https://github.com/alsgy2001" class="social-item github"
-          data-label="GitHub Pessoal">
+        <a href="https://github.com/alsgy2001" class="social-item github" data-label="GitHub Pessoal">
           <i class="fab fa-github"></i>
         </a>
-        <a href="https://github.com/esalanguerraoficial"
-          class="social-item github" data-label="GitHub de Trabalho">
+        <a href="https://github.com/esalanguerraoficial" class="social-item github" data-label="GitHub de Trabalho">
           <i class="fab fa-github"></i>
         </a>
       </div>
-      <a href="./assets/doc/alanguerra_engenheirodesoftware.pdf"
-        class="card-btn">
+      <a href="./assets/doc/alanguerra_engenheirodesoftware.pdf" class="card-btn">
         <i class="fas fa-download"></i> Baixar Currículo
       </a>
     </div>
